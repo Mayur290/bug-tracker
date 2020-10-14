@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Project extends Component {
+class ProjectAdd extends Component {
   state = {
     credentials: { name: "", description: "" },
     output: {},
@@ -37,7 +37,7 @@ class Project extends Component {
   render() {
     return (
       <div>
-        <h1>Project finder form</h1>
+        <h1>Project </h1>
         <label>
           {" "}
           project names:
@@ -61,10 +61,10 @@ class Project extends Component {
         </label>
         <br />
 
-        <button onClick={this.proj}>search project</button>
+        <button onClick={this.proj}>Add project</button>
       </div>
     );
   }
 }
 
-export default Project;
+export default ProjectAdd;
