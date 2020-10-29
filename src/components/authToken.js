@@ -5,7 +5,7 @@ export default function AuthToken(d) {
   let data = {};
   data["username"] = d.username;
   data["password"] = d.password;
-  // console.log("auth token reached");
+  console.log(data);
   const options = {
     headers: {
       "content-type": "application/x-www-form-urlencoded",
@@ -19,7 +19,7 @@ export default function AuthToken(d) {
     )
     .then(
       (response) => {
-        // console.log(response.data.token);
+        console.log(`token: ${response.data.token}`);
         console.log("logged in");
         document.cookie = `Token=${response.data.token}`;
         localStorage.setItem("token", response.data.token);

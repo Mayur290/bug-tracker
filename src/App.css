@@ -6,7 +6,7 @@ dark green: #519E8A
 medium green: #7EB09B
 light green: #A3C4BC
 */
-
+@import "~antd/dist/antd.css";
 .wrapper {
   height: 100vh;
   width: 100%;

@@ -7,6 +7,10 @@ import AuthToken from "./authToken.js";
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 // import AuthToken from "./authToken.js";
 class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = {
     credentials: { email: "", password: "" },
     error: false,
@@ -33,12 +37,14 @@ class Login extends Component {
           d["password"] = this.state.credentials.password;
           d["username"] = response.data.username;
           // console.log(d);
-
+          this.props.isLoggedin(true);
+          // console.log(this.props.value);
           AuthToken(d);
         },
         (error) => {
           console.log(error);
           console.log("login error");
+          this.props.isLoggedin(false);
           that.setState({ error: true });
           setTimeout(function () {
             that.setState({ error: false });
